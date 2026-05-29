@@ -1,47 +1,54 @@
-﻿using System;
-
-class PropertyChecker
+﻿class Property
 {
-    static void WelcomeMessage(string companyName)
-    {
-        Console.WriteLine("Welcome to " + companyName + " Property Management System");
-    }
+    // Attributes
+    public string Name;
+    public string Location;
+    public double Price;
+    public int Units;
+    public string status;
 
-    static string GetStatus(int units)
+    // Method inside the class
+    public void DisplayInfo()
     {
-        if (units < 5)
-            return "Open for sale";
-        else if (units <= 10)
-            return "Fully sold";
-        else
-            return "Coming soon";
+        Console.WriteLine("Property: " + Name);
+        Console.WriteLine("Location: " + Location);
+        Console.WriteLine("Price: Ksh " + Price);
+        Console.WriteLine("Units Available: " + Units);
+        Console.WriteLine("status:" + status);
+        Console.WriteLine("---------------------------");
     }
+}
 
-    static string GetPropertyType(int price)
-    {
-        if (price < 5000000)
-            return "Affordable Housing";
-        else if (price <= 20000000)
-            return "Mid Range Property";
-        else
-            return "Luxury Property";
-    }
-
+class Program
+{
     static void Main()
     {
-        WelcomeMessage("Alleth Investment");
-        Console.WriteLine("--------------------------------------------------");
+        // Creating objects from the Property class
+        Property alpha = new Property();
+        alpha.Name = "Alpha";
+        alpha.Location = "Thika Road";
+        alpha.Price = 4500000;
+        alpha.Units = 3;
+        alpha.status = "open for sale";
 
-        // 1. Check Unit Availability Statuses
-        Console.WriteLine("Alpha | Status: " + GetStatus(3));
-        Console.WriteLine("Beta  | Status: " + GetStatus(7));
-        Console.WriteLine("Gamma | Status: " + GetStatus(12));
-        
-        Console.WriteLine("--------------------------------------------------");
+        Property beta = new Property();
+        beta.Name = "Beta";
+        beta.Location = "Kiambu Road";
+        beta.Price = 12000000;
+        beta.Units = 7;
+        beta.status ="coming soon";
 
-        // 2. Check Property Type Classifications by Price
-        Console.WriteLine("Property at 3,500,000 Kes   -> " + GetPropertyType(3500000));
-        Console.WriteLine("Property at 12,000,000 Kes  -> " + GetPropertyType(12000000));
-        Console.WriteLine("Property at 45,000,000 Kes  -> " + GetPropertyType(45000000));
+        Property gamma = new Property();
+        gamma.Name = "gamma";
+        gamma.Location = "Ruiru";
+        gamma.Price = 8000000;
+        gamma.Units = 4;
+        gamma. status ="sold out";
+
+
+        // Display both properties
+        alpha.DisplayInfo();
+        beta.DisplayInfo();
+        gamma.DisplayInfo();
     }
 }
