@@ -1,54 +1,69 @@
-﻿class Property
-{
-    // Attributes
-    public string Name;
-    public string Location;
-    public double Price;
-    public int Units;
-    public string status;
+﻿using System;
 
-    // Method inside the class
-    public void DisplayInfo()
+namespace AllethPropertyApp
+{
+    class Program
     {
-        Console.WriteLine("Property: " + Name);
-        Console.WriteLine("Location: " + Location);
-        Console.WriteLine("Price: Ksh " + Price);
-        Console.WriteLine("Units Available: " + Units);
-        Console.WriteLine("status:" + status);
-        Console.WriteLine("---------------------------");
+        static void Main(string[] args)
+        {
+            // 1. Create three client objects with different budgets
+            Client client1 = new Client("Sarah Jenkins", "+1-555-0198", 4200000, "thika road");
+            Client client2 = new Client("Michael Chen", "+1-555-0243", 12500000, "ruiru");
+            Client client3 = new Client("Elena Rostova", "+1-555-0311", 35000000, "nairobi");
+
+            // 2. Call methods on each client
+            Console.WriteLine("=== ALLETH PROPERTY BUYER PROFILES ===\n");
+            
+            client1.DisplayClient();
+            client2.DisplayClient();
+            client3.DisplayClient();
+        }
     }
-}
 
-class Program
-{
-    static void Main()
+    public class Client
     {
-        // Creating objects from the Property class
-        Property alpha = new Property();
-        alpha.Name = "Alpha";
-        alpha.Location = "Thika Road";
-        alpha.Price = 4500000;
-        alpha.Units = 3;
-        alpha.status = "open for sale";
+        // Attributes (Properties)
+        public string FullName { get; set; }
+        public string Phone { get; set; }
+        public double Budget { get; set; }
+        public string PreferredLocation { get; set; }
 
-        Property beta = new Property();
-        beta.Name = "Beta";
-        beta.Location = "Kiambu Road";
-        beta.Price = 12000000;
-        beta.Units = 7;
-        beta.status ="coming soon";
+        // Constructor taking all four values
+        public Client(string fullName, string phone, double budget, string preferredLocation)
+        {
+            FullName = fullName;
+            Phone = phone;
+            Budget = budget;
+            PreferredLocation = preferredLocation;
+        }
 
-        Property gamma = new Property();
-        gamma.Name = "gamma";
-        gamma.Location = "Ruiru";
-        gamma.Price = 8000000;
-        gamma.Units = 4;
-        gamma. status ="sold out";
+        // Method to categorize the budget
+        public string GetBudgetCategory()
+        {
+            if (Budget < 5000000)
+            {
+                return "First Time Buyer";
+            }
+            else if (Budget <= 20000000)
+            {
+                return "Mid Range Buyer";
+            }
+            else
+            {
+                return "Premium Buyer";
+            }
+        }
 
-
-        // Display both properties
-        alpha.DisplayInfo();
-        beta.DisplayInfo();
-        gamma.DisplayInfo();
+        // Method to cleanly print client details
+        public void DisplayClient()
+        {
+            Console.WriteLine("---------------------------------------------");
+            Console.WriteLine($"Name:               {FullName}");
+            Console.WriteLine($"Phone:              {Phone}");
+            Console.WriteLine($"Preferred Location: {PreferredLocation}");
+            Console.WriteLine($"Budget:             {Budget:N0} ksh"); // Formats numbers with commas (e.g., 5,000,000)
+            Console.WriteLine($"Category:           {GetBudgetCategory()}");
+            Console.WriteLine("---------------------------------------------\n");
+        }
     }
 }
