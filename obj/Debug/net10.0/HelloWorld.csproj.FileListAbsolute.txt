@@ -7,9 +7,9 @@ C:\Users\alleth\HelloWorld\obj\Debug\net10.0\HelloWorld.GeneratedMSBuildEditorCo
 C:\Users\alleth\HelloWorld\obj\Debug\net10.0\HelloWorld.AssemblyInfoInputs.cache
 C:\Users\alleth\HelloWorld\obj\Debug\net10.0\HelloWorld.AssemblyInfo.cs
 C:\Users\alleth\HelloWorld\obj\Debug\net10.0\HelloWorld.csproj.CoreCompileInputs.cache
+C:\Users\alleth\HelloWorld\obj\Debug\net10.0\HelloWorld.sourcelink.json
 C:\Users\alleth\HelloWorld\obj\Debug\net10.0\HelloWorld.dll
 C:\Users\alleth\HelloWorld\obj\Debug\net10.0\refint\HelloWorld.dll
 C:\Users\alleth\HelloWorld\obj\Debug\net10.0\HelloWorld.pdb
 C:\Users\alleth\HelloWorld\obj\Debug\net10.0\HelloWorld.genruntimeconfig.cache
 C:\Users\alleth\HelloWorld\obj\Debug\net10.0\ref\HelloWorld.dll
-c:\Users\alleth\HelloWorld\obj\Debug\net10.0\HelloWorld.sourcelink.json
